@@ -10,5 +10,14 @@
   <%= @category.description %>
 </p>
 
+<% @questions.each do |question| %>
+  <p>
+    <%= question.description %>
+  </p>
+<% end %>
+
+
+
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
+<%= link_to 'New Question', new_question_path(:category_id => 1) %>
