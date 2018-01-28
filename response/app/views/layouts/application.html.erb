@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Myapp</title>
+    <title>The Techbuzz Hub</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,8 +9,32 @@
   </head>
 
   <body>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">
+            <p><b>Bash Core</b></p>
+          </a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-left">
+          <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="row">
+      <div class="container">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="container">
+      <%= yield %>
+      </div>
+    </div>
+
   </body>
 </html>
