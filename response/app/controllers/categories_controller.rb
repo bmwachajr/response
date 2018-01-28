@@ -72,4 +72,9 @@ class CategoriesController < ApplicationController
     def category_params
       params.require(:category).permit(:name, :description)
     end
+
+    #display the answers of a question
+    def get_answers(question_id)
+      @answers = Answer.where(question_id: self.id, User_id: current_user.id)
+  end
 end

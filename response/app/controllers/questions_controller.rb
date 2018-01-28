@@ -72,10 +72,4 @@ class QuestionsController < ApplicationController
     def question_params
       params.require(:question).permit(:description, :category_id)
     end
-
-    #display the answers of a question
-    def answers
-      byebug
-      @answers = Answer.where(question_id: self.id, User_id: current_user.id)
-    end
 end

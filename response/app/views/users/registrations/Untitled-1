@@ -1,0 +1,17 @@
+<ul class="collapsible" data-collapsible="accordion">
+<% @categories.each do |category| %>
+    <li class="" id="<%= category.name %>">
+        <div class="collapsible-header">
+            <i class="material-icons view-learning-outcomes view-feedback arrow-up"
+            style="display: none;">keyboard_arrow_down</i>
+            <i class="material-icons arrow-down"
+            >keyboard_arrow_right</i>
+            <%= category.name %>
+        </div>
+
+        <div class="collapsible-body">
+            body here
+        </div>
+    </li>
+<% end %>
+</ul>
